@@ -1,0 +1,20 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://www.fastly.com/documentation/reference/compute/fastly-toml
+
+authors = ["antoinebrossault@gmail.com"]
+cloned_from = "https://github.com/fastly/compute-starter-kit-javascript-default"
+description = ""
+language = "javascript"
+manifest_version = 3
+name = "computeVideo"
+service_id = ""
+
+[scripts]
+  build = "npm run build"
+  post_init = "npm install"
+
+[local_server]
+  [local_server.backends]
+    [local_server.backends.s3_faast_life]
+      override_host = "s3.faast.life"
+      url = "http://s3.faast.life:32771"
